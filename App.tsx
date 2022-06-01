@@ -1,20 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import HomePage from './src/screens/home/Home';
+export { default as App } from './src/screens/home/Home';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Essa será a tela inicial da Pokedex</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <HomePage />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
