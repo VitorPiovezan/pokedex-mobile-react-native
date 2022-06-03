@@ -6,9 +6,14 @@ import {
   SearchHome,
   IconSearch,
   SearchHomeView,
+  OptionsHomeView,
+  Option,
+  WatchHomeView,
+  TitleWatch,
 } from './Home.style';
-import { StatusBar, View } from 'react-native';
+import { StatusBar, Text } from 'react-native';
 import React from 'react';
+import { optionsHome } from '../../data/data';
 
 export default function HomePage() {
   return (
@@ -24,7 +29,17 @@ export default function HomePage() {
           placeholderTextColor="#b8b6b3"
         />
       </SearchHomeView>
-      <StatusBar style="auto" />
+      <OptionsHomeView
+        data={optionsHome}
+        numColumns={2}
+        renderItem={({ item }) => {
+          return <Option key={item.id} backgroundColor={item.color} />;
+        }}
+      />
+      <WatchHomeView>
+        <TitleWatch>Assistir</TitleWatch>
+      </WatchHomeView>
+      <StatusBar style="auto" backgroundColor="#090f0b" />
     </Container>
   );
 }

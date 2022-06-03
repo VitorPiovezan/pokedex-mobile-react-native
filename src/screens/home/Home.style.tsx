@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FlatList } from 'react-native';
 
 export const Container = styled.View`
   flex: 1;
@@ -37,6 +38,36 @@ export const IconSearch = styled.Image`
   position: absolute;
   width: 20px;
   height: 20px;
-  margin: 13px 20px
+  margin: 13px 20px;
   z-index: 3;
+`;
+
+export const OptionsHomeView = styled(FlatList)`
+  margin-top: 15px;
+  width: 90%;
+  max-height: 200px;
+`;
+
+export const Option = styled.View`
+  background-color: ${props => props.backgroundColor};
+  width: 47%;
+  height: 70px;
+  border-radius: 15px;
+  opacity: 0.6;
+  margin-top: 20px;
+  margin-right: 5%;
+`;
+
+export const WatchHomeView = styled.View`
+  margin-top: 15px;
+  width: 90%;
+`;
+
+export const TitleWatch = styled.Text`
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom-color: #363636;
+  border-bottom-width: 1px;
+  padding-bottom: 10px;
 `;
