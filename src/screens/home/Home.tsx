@@ -14,6 +14,7 @@ import {
 import { StatusBar, Text } from 'react-native';
 import React from 'react';
 import { optionsHome } from '../../data/data';
+import Pokemons from '../pokemons/Pokemons';
 
 export default function HomePage() {
   return (
