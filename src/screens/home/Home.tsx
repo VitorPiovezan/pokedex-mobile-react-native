@@ -11,7 +11,6 @@ import {
   WatchHomeView,
   TitleWatch,
 } from './Home.style';
-import { StatusBar, Text } from 'react-native';
 import React from 'react';
 import { optionsHome } from '../../data/data';
 import Pokemons from '../pokemons/Pokemons';
@@ -40,7 +39,6 @@ export default function HomePage() {
       <WatchHomeView>
         <TitleWatch>Assistir</TitleWatch>
       </WatchHomeView>
-      <StatusBar style="auto" backgroundColor="#090f0b" />
     </Container>
   );
 }

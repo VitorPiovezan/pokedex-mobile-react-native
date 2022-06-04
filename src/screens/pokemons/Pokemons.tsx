@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import api from '../../api/api';
 import { Header, ImageMenu } from '../home/Home.style';
 import { FlatList, Text } from 'react-native';
+import CardPokemon from '../../components/cardPokemonList/CardPokemon';
 
 export default function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
@@ -17,7 +18,6 @@ export default function Pokemons() {
       });
   }, []);
 
-  console.log(pokemons);
   return (
     <Container>
       <Header>
@@ -28,11 +28,7 @@ export default function Pokemons() {
         data={pokemons}
         numColumns={2}
         renderItem={({ item }) => {
-          return (
-            <>
-              <Text style={{ color: '#fff', margin: 10 }}>{item.name}</Text>
-            </>
-          );
+          return <CardPokemon pokemon={item} />;
         }}
       />
     </Container>
