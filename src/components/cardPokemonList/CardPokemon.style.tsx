@@ -1,6 +1,7 @@
+import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components';
 
-export const CardView = styled.View`
+export const CardView = styled(TouchableOpacity)`
   width: 175px;
   margin: 0 2%;
   padding: 20px;

@@ -13,9 +13,12 @@ import {
 } from './Home.style';
 import React from 'react';
 import { optionsHome } from '../../data/data';
-import Pokemons from '../pokemons/Pokemons';
 
-export default function HomePage() {
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Button } from 'react-native';
+
+export default function HomePage({ navigation }) {
   return (
     <Container>
       <Header>
@@ -33,7 +36,13 @@ export default function HomePage() {
         data={optionsHome}
         numColumns={2}
         renderItem={({ item }) => {
-          return <Option key={item.id} backgroundColor={item.color} />;
+          return (
+            <Option
+              key={item.id}
+              backgroundColor={item.color}
+              onPress={() => navigation.navigate(item.route)}
+            />
+          );
         }}
       />
       <WatchHomeView>

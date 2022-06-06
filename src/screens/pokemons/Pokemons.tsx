@@ -20,10 +20,6 @@ export default function Pokemons() {
 
   return (
     <Container>
-      <Header>
-        <ImageMenu source={require('../../../assets/icons/menu.png')} />
-        <Title>Pokemons</Title>
-      </Header>
       <FlatList
         data={pokemons}
         numColumns={2}

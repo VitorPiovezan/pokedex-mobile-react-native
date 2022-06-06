@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FlatList } from 'react-native';
+import { FlatList, TouchableOpacity } from 'react-native';
 
 export const Container = styled.View`
   flex: 1;
@@ -16,11 +16,11 @@ export const Title = styled.Text`
   font-size: 26px;
   font-weight: bold;
   width: 70%;
-  padding-top: 30px;
 `;
 
 export const ImageMenu = styled.Image`
   width: 25px;
+  margin-bottom: 30px;
 `;
 
 export const SearchHomeView = styled.View`
@@ -48,7 +48,7 @@ export const OptionsHomeView = styled(FlatList)`
   max-height: 200px;
 `;
 
-export const Option = styled.View`
+export const Option = styled(TouchableOpacity)`
   background-color: ${props => props.backgroundColor};
   width: 47%;
   height: 70px;
