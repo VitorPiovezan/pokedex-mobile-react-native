@@ -45,10 +45,8 @@ export default function CardPokemon({ pokemon }) {
         shadowOffset: { width: 3, height: 2 },
         shadowColor: '#dff5e1',
         shadowOpacity: 0.4,
-
         shadowRadius: 35,
-        elevation: 3,
-        zIndex: 1,
+        zIndex: 999,
       }}
     >
       <HashPokemon>#{hash}</HashPokemon>

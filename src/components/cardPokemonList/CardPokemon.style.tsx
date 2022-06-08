@@ -44,7 +44,7 @@ export const ViewType = styled.View`
 
 export const TextType = styled.Text`
   padding: 3px;
-  font-size: 11pt;
+  font-size: 11px;
   font-weight: bold;
   color: ${props => props.color};
 `;

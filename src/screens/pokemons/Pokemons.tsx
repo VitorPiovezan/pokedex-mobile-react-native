@@ -7,16 +7,21 @@ import CardPokemon from '../../components/cardPokemonList/CardPokemon';
 
 export default function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     api
-      .get('pokemon')
+      .get(`pokemon?offset=0&limit=${50 * page}`)
       .then(response => setPokemons(response.data.results))
       .catch(err => {
         console.error('ops! ocorreu um erro' + err);
         alert('Falha ao se conectar ao servidor: ' + err);
       });
-  }, []);
+  }, [page]);
+
+  function loadPokemons() {
+    setPage(page + 1);
+  }
 
   return (
     <Container>
@@ -26,6 +31,8 @@ export default function Pokemons() {
         renderItem={({ item }) => {
           return <CardPokemon pokemon={item} />;
         }}
+        onEndReached={loadPokemons}
+        onEndReachedThreshold={0.1}
       />
     </Container>
   );
