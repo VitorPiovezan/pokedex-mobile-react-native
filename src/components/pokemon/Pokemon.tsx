@@ -12,8 +12,11 @@ export default function Pokemon({ navigation, route }) {
   const [image, setImage] = useState(null);
   const [name, setName] = useState(null);
   const [types, setTypes] = useState([]);
+  const [specie, setSpecie] = useState(null);
+  const [specieLink, setSpecieLink] = useState(null);
 
   useEffect(() => {
+    let species = '';
     api
       .get(`pokemon/${pokemon.name}`)
       .then(res => {
@@ -25,16 +28,22 @@ export default function Pokemon({ navigation, route }) {
           : null;
         setName(res.data.name[0].toUpperCase() + res.data.name.substring(1));
         setTypes(res.data.types);
+        setSpecieLink(res.data.species.url.substring(26));
       })
       .catch(err => {
         console.error('ops! ocorreu um erro' + err);
         alert('Falha ao se conectar ao servidor: ' + err);
       });
-  }, [!pokemonData]);
+    api.get(specieLink).then(res => {
+      const dataSpecie = res.data.genera.find(e => e.language.name == 'en');
+      setSpecie(dataSpecie.genus);
+    });
+  }, [!pokemonData, specieLink]);
 
   return (
     <Container>
       <Image style={{ width: 250, height: 250 }} source={{ uri: image }} />
+
       <Text
         style={{
           color: '#fff',
@@ -45,11 +54,20 @@ export default function Pokemon({ navigation, route }) {
       >
         {name}
       </Text>
+      <Text
+        style={{
+          color: '#fff',
+          fontSize: 16,
+          paddingTop: 5,
+        }}
+      >
+        {specie}
+      </Text>
       <FlatList
         data={types}
         numColumns={2}
         renderItem={({ item }) => {
-          return <ListTypes name={item.type.name} />;
+          return <ListTypes pokemonName={item.type.name} onlyBorder />;
         }}
       />
     </Container>

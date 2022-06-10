@@ -62,7 +62,7 @@ export default function CardPokemon({ pokemon }) {
         data={types}
         numColumns={2}
         renderItem={({ item }) => {
-          return <ListTypes name={item.type.name} />;
+          return <ListTypes pokemonName={item.type.name} />;
         }}
       />
     </CardView>

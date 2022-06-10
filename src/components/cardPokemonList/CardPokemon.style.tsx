@@ -48,3 +48,22 @@ export const TextType = styled.Text`
   font-weight: bold;
   color: ${props => props.color};
 `;
+
+export const ViewTypeOnlyBorder = styled.View`
+  width: 80px;
+  height: 32px;
+  border-radius: 20px;
+  text-align: center;
+  margin-left: 5px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px ${props => props.color};
+`;
+
+export const TextTypeOnlyBorder = styled.Text`
+  padding: 4px;
+  font-size: 13px;
+  color: ${props => props.color};
+`;
