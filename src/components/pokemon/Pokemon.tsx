@@ -1,8 +1,9 @@
-import { Text, Image, FlatList } from 'react-native';
+import { Text, Image, FlatList, View, TouchableOpacity } from 'react-native';
 import { Container } from '../../screens/home/Home.style';
 import { useEffect, useState } from 'react';
 import api from '../../api/api';
 import ListTypes from '../cardPokemonList/Types';
+import { pad } from '../cardPokemonList/CardPokemon';
 
 export default function Pokemon({ navigation, route }) {
   const pokemon = route.params.data;
@@ -29,6 +30,7 @@ export default function Pokemon({ navigation, route }) {
         setName(res.data.name[0].toUpperCase() + res.data.name.substring(1));
         setTypes(res.data.types);
         setSpecieLink(res.data.species.url.substring(26));
+        setHash(pad(res.data.id, 3));
       })
       .catch(err => {
         console.error('ops! ocorreu um erro' + err);
@@ -42,6 +44,47 @@ export default function Pokemon({ navigation, route }) {
 
   return (
     <Container>
+      <View
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          width: '90%',
+          paddingTop: 60,
+        }}
+      >
+        <TouchableOpacity onPress={() => navigation.navigate('Pokemons')}>
+          <Text
+            style={{
+              color: '#fff',
+              fontSize: 20,
+              fontWeight: 'bold',
+            }}
+          >
+            {'<'}
+          </Text>
+        </TouchableOpacity>
+        <Text
+          style={{
+            color: '#fff',
+            fontSize: 20,
+            fontWeight: 'bold',
+          }}
+        >
+          #{hash}
+        </Text>
+        <TouchableOpacity>
+          <Text
+            style={{
+              color: '#fff',
+              fontSize: 20,
+              fontWeight: 'bold',
+            }}
+          >
+            {'<3'}
+          </Text>
+        </TouchableOpacity>
+      </View>
       <Image style={{ width: 250, height: 250 }} source={{ uri: image }} />
 
       <Text
@@ -58,7 +101,8 @@ export default function Pokemon({ navigation, route }) {
         style={{
           color: '#fff',
           fontSize: 16,
-          paddingTop: 5,
+          paddingTop: 15,
+          paddingBottom: 5,
         }}
       >
         {specie}

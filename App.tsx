@@ -8,7 +8,7 @@ export default function App() {
   return (
     <>
       <Routes />
-      <StatusBar style="auto" backgroundColor="#090f0b" />
+      <StatusBar style="auto" backgroundColor="#000" />
     </>
   );
 }

@@ -37,6 +37,7 @@ export default function Routes() {
           name="Pokemon"
           component={Pokemon}
           options={{
+            headerShown: false,
             title: null,
             headerStyle: {
               backgroundColor: '#090f0b',

@@ -9,6 +9,11 @@ import api from '../../api/api';
 import { FlatList, Text } from 'react-native';
 import ListTypes from './Types';
 
+export function pad(num, size) {
+  var s = '000000000' + num;
+  return s.substr(s.length - size);
+}
+
 export default function CardPokemon({ pokemon }) {
   const [pokemonData, setPokemonData] = useState({});
   const [hash, setHash] = useState(null);
@@ -16,10 +21,6 @@ export default function CardPokemon({ pokemon }) {
   const [name, setName] = useState(null);
   const [types, setTypes] = useState([]);
 
-  function pad(num, size) {
-    var s = '000000000' + num;
-    return s.substr(s.length - size);
-  }
   useEffect(() => {
     api
       .get(`pokemon/${pokemon.name}`)
