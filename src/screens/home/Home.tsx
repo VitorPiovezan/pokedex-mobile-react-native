@@ -13,10 +13,7 @@ import {
 } from './Home.style';
 import React from 'react';
 import { optionsHome } from '../../data/data';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Button } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
 export default function HomePage({ navigation }) {
   return (
@@ -35,13 +32,19 @@ export default function HomePage({ navigation }) {
       <OptionsHomeView
         data={optionsHome}
         numColumns={2}
-        renderItem={({ item }) => {
+        renderItem={({ item, index }) => {
+          console.log(item);
           return (
-            <Option
-              key={item.id}
-              backgroundColor={item.color}
+            <TouchableOpacity
+              key={index}
               onPress={() => navigation.navigate(item.route)}
-            />
+            >
+              <Option
+                source={{
+                  uri: item.url,
+                }}
+              />
+            </TouchableOpacity>
           );
         }}
       />

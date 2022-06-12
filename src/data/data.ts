@@ -1,8 +1,18 @@
 export const optionsHome = [
-  { id: 1, color: '#a635c2', route: 'Pokemons' },
-  { id: 2, color: '#ff2f2f', route: 'Pokemons' },
-  { id: 3, color: '#01c4ff', route: 'Pokemons' },
-  { id: 4, color: '#33a130', route: 'Pokemons' },
+  {
+    id: 1,
+    color: '#a635c2',
+    route: 'Pokemons',
+    url: 'https://lh6.googleusercontent.com/KNd2HUmBNK0Obn_PMja_a-gXy27DltbXErsdD5hS3LmYY4N-QLQObIbcG74pGOPn_tPg1GqG8UrmbCmFusj-=w1764-h1528',
+  },
+  {
+    id: 2,
+    color: '#ff2f2f',
+    route: 'Pokemons',
+    url: 'https://lh4.googleusercontent.com/-6ynk9p7K2n7hJM5qlClFxZY3e-EN4pbcSr1ABl4l0gxbxxYxBhy6-tCGMtgYOj1I-g_3xmyi7jmVbn7_bcY=w1764-h1528',
+  },
+  // { id: 3, color: '#01c4ff', route: 'Pokemons' },
+  // { id: 4, color: '#33a130', route: 'Pokemons' },
 ];
 
 export const typesStyles = [

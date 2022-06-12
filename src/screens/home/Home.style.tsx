@@ -48,12 +48,9 @@ export const OptionsHomeView = styled(FlatList)`
   max-height: 200px;
 `;
 
-export const Option = styled(TouchableOpacity)`
-  background-color: ${props => props.backgroundColor};
-  width: 47%;
-  height: 70px;
-  border-radius: 15px;
-  opacity: 0.6;
+export const Option = styled.Image`
+  width: 175px;
+  height: 80px;
   margin-top: 20px;
   margin-right: 5%;
 `;

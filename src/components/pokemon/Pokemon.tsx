@@ -36,10 +36,12 @@ export default function Pokemon({ navigation, route }) {
         console.error('ops! ocorreu um erro' + err);
         alert('Falha ao se conectar ao servidor: ' + err);
       });
-    api.get(specieLink).then(res => {
-      const dataSpecie = res.data.genera.find(e => e.language.name == 'en');
-      setSpecie(dataSpecie.genus);
-    });
+    if (specieLink) {
+      api.get(specieLink).then(res => {
+        const dataSpecie = res.data.genera.find(e => e.language.name == 'en');
+        setSpecie(dataSpecie.genus);
+      });
+    }
   }, [!pokemonData, specieLink]);
 
   return (
