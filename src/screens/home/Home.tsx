@@ -20,25 +20,23 @@ export default function HomePage({ navigation }) {
     <Container>
       <Header>
         <ImageMenu source={require('../../../assets/icons/menu.png')} />
-        <Title>Qual Pokémon você está procurando?</Title>
+        <Title>What Pokémon are you looking for?</Title>
       </Header>
       <SearchHomeView>
         <IconSearch source={require('../../../assets/icons/loupe_gray.png')} />
         <SearchHome
-          placeholder="Buscar Pokémon"
+          placeholder="Search Pokémon"
           placeholderTextColor="#b8b6b3"
         />
       </SearchHomeView>
       <OptionsHomeView
         data={optionsHome}
         numColumns={2}
+        listKey={item => item.id.toString()}
+        keyExtractor={item => item.id.toString()}
         renderItem={({ item, index }) => {
-          console.log(item);
           return (
-            <TouchableOpacity
-              key={index}
-              onPress={() => navigation.navigate(item.route)}
-            >
+            <TouchableOpacity onPress={() => navigation.navigate(item.route)}>
               <Option
                 source={{
                   uri: item.url,
@@ -49,7 +47,7 @@ export default function HomePage({ navigation }) {
         }}
       />
       <WatchHomeView>
-        <TitleWatch>Assistir</TitleWatch>
+        <TitleWatch>Watch</TitleWatch>
       </WatchHomeView>
     </Container>
   );

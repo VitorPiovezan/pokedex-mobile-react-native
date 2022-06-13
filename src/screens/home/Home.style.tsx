@@ -50,13 +50,13 @@ export const OptionsHomeView = styled(FlatList)`
 
 export const Option = styled.Image`
   width: 175px;
-  height: 80px;
+  height: 78px;
   margin-top: 20px;
   margin-right: 5%;
 `;
 
 export const WatchHomeView = styled.View`
-  margin-top: 15px;
+  margin-top: 30px;
   width: 90%;
 `;
 

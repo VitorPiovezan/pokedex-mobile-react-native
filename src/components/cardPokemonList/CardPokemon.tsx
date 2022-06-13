@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import api from '../../api/api';
 import { FlatList, Text } from 'react-native';
 import ListTypes from './Types';
+import { typesStyles } from '../../data/data';
 
 export function pad(num, size) {
   var s = '000000000' + num;
@@ -20,6 +21,7 @@ export default function CardPokemon({ pokemon }) {
   const [image, setImage] = useState(null);
   const [name, setName] = useState(null);
   const [types, setTypes] = useState([]);
+  const [shadowColor, setShadowColor] = useState({});
 
   useEffect(() => {
     api
@@ -34,6 +36,10 @@ export default function CardPokemon({ pokemon }) {
         setHash(pad(res.data.id, 3));
         setName(res.data.name[0].toUpperCase() + res.data.name.substring(1));
         setTypes(res.data.types);
+        let shadow = typesStyles.find(
+          e => e.name == res.data.types[0].type.name
+        );
+        setShadowColor(shadow);
       })
       .catch(err => {
         console.error('ops! ocorreu um erro' + err);
@@ -44,8 +50,8 @@ export default function CardPokemon({ pokemon }) {
     <CardView
       style={{
         shadowOffset: { width: 3, height: 2 },
-        shadowColor: '#dff5e1',
-        shadowOpacity: 0.4,
+        shadowColor: `${shadowColor ? shadowColor.defaultColor : '#dff5e1'}`,
+        shadowOpacity: 0.5,
         shadowRadius: 35,
         zIndex: 999,
       }}
@@ -62,6 +68,8 @@ export default function CardPokemon({ pokemon }) {
       <FlatList
         data={types}
         numColumns={2}
+        listKey={(item, index) => `_key${index.toString()}`}
+        keyExtractor={(item, index) => `_key${index.toString()}`}
         renderItem={({ item }) => {
           return <ListTypes pokemonName={item.type.name} />;
         }}

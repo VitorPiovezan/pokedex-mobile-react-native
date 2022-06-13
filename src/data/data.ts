@@ -3,16 +3,26 @@ export const optionsHome = [
     id: 1,
     color: '#a635c2',
     route: 'Pokemons',
-    url: 'https://lh6.googleusercontent.com/KNd2HUmBNK0Obn_PMja_a-gXy27DltbXErsdD5hS3LmYY4N-QLQObIbcG74pGOPn_tPg1GqG8UrmbCmFusj-=w1764-h1528',
+    url: 'https://storage.googleapis.com/gelyartsorvetes.com.br/img/poke/pokedex_button.png',
   },
   {
     id: 2,
     color: '#ff2f2f',
     route: 'Pokemons',
-    url: 'https://lh4.googleusercontent.com/-6ynk9p7K2n7hJM5qlClFxZY3e-EN4pbcSr1ABl4l0gxbxxYxBhy6-tCGMtgYOj1I-g_3xmyi7jmVbn7_bcY=w1764-h1528',
+    url: 'https://storage.googleapis.com/gelyartsorvetes.com.br/img/poke/moves_button.png',
   },
-  // { id: 3, color: '#01c4ff', route: 'Pokemons' },
-  // { id: 4, color: '#33a130', route: 'Pokemons' },
+  {
+    id: 3,
+    color: '#01c4ff',
+    route: 'Pokemons',
+    url: 'https://storage.googleapis.com/gelyartsorvetes.com.br/img/poke/evolutions_button.png',
+  },
+  {
+    id: 4,
+    color: '#33a130',
+    route: 'Pokemons',
+    url: 'https://storage.googleapis.com/gelyartsorvetes.com.br/img/poke/locations_button.png',
+  },
 ];
 
 export const typesStyles = [
