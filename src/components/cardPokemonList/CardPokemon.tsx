@@ -10,10 +10,12 @@ import { FlatList, Text } from 'react-native';
 import ListTypes from './Types';
 import { typesStyles } from '../../data/data';
 
+
 export function pad(num, size) {
   var s = '000000000' + num;
   return s.substr(s.length - size);
 }
+
 
 export default function CardPokemon({ pokemon }) {
   const [pokemonData, setPokemonData] = useState({});
