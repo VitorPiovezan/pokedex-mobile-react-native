@@ -1,7 +1,6 @@
-import { Container, Title } from '../home/Home.style';
+import { Container } from '../home/Home.style';
 import { useState, useEffect } from 'react';
 import api from '../../api/api';
-import { Header, ImageMenu } from '../home/Home.style';
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import CardPokemon from '../../components/cardPokemonList/CardPokemon';
 

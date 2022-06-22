@@ -6,7 +6,7 @@ import {
 } from './CardPokemon.style';
 import { useEffect, useState } from 'react';
 import api from '../../api/api';
-import { FlatList, Text } from 'react-native';
+import { FlatList } from 'react-native';
 import ListTypes from './Types';
 import { typesStyles } from '../../data/data';
 
