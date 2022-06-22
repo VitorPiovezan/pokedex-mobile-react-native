@@ -1,7 +1,7 @@
 import { Container } from '../home/Home.style';
 import { useState, useEffect } from 'react';
 import api from '../../api/api';
-import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, TouchableOpacity } from 'react-native';
 import CardPokemon from '../../components/cardPokemonList/CardPokemon';
 
 export default function Pokemons({ navigation }) {
