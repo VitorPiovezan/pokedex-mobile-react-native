@@ -17,7 +17,6 @@ export default function Pokemon({ navigation, route }) {
   const [specieLink, setSpecieLink] = useState(null);
 
   useEffect(() => {
-    let species = '';
     api
       .get(`pokemon/${pokemon.name}`)
       .then(res => {
