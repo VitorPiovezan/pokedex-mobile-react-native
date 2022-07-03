@@ -32,8 +32,8 @@ export default function Pokemon({ navigation, route }) {
         setHash(pad(res.data.id, 3));
       })
       .catch(err => {
-        console.error('ops! ocorreu um erro' + err);
-        alert('Falha ao se conectar ao servidor: ' + err);
+        console.error('Ocorreu um erro:\n\n' + err);
+        alert('Falha ao se conectar ao servidor: \n\n' + err);
       });
     if (specieLink) {
       api.get(specieLink).then(res => {
